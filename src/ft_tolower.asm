@@ -1,0 +1,20 @@
+section .text
+
+; กำหนดชื่อฟังก์ชันตามระบบปฏิบัติการ
+%ifdef __APPLE__
+    %define M_FT_TOLOWER _ft_tolower
+%else
+    %define M_FT_TOLOWER ft_tolower
+%endif
+
+    global M_FT_TOLOWER
+
+M_FT_TOLOWER:
+    mov eax, edi        ; รับพารามิเตอร์ c จาก edi
+    cmp eax, 'A'        ; เปรียบเทียบกับ 'A'
+    jl .done            ; ถ้า < 'A' คืนค่าเดิม
+    cmp eax, 'Z'        ; เปรียบเทียบกับ 'Z'
+    jg .done            ; ถ้า > 'Z' คืนค่าเดิม
+    add eax, 32         ; แปลงเป็นตัวพิมพ์เล็ก (+32)
+.done:
+    ret                 ; คืนค่าใน eax
