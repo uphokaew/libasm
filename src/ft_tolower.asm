@@ -10,11 +10,11 @@ section .text
     global M_FT_TOLOWER
 
 M_FT_TOLOWER:
-    mov eax, edi        ; รับพารามิเตอร์ c จาก edi
-    cmp eax, 'A'        ; เปรียบเทียบกับ 'A'
+    mov rax, rdi        ; รับพารามิเตอร์ c จาก edi
+    cmp rax, 'A'        ; เปรียบเทียบกับ 'A'
     jl .done            ; ถ้า < 'A' คืนค่าเดิม
-    cmp eax, 'Z'        ; เปรียบเทียบกับ 'Z'
+    cmp rax, 'Z'        ; เปรียบเทียบกับ 'Z'
     jg .done            ; ถ้า > 'Z' คืนค่าเดิม
-    add eax, 32         ; แปลงเป็นตัวพิมพ์เล็ก (+32)
+    add rax, 32         ; แปลงเป็นตัวพิมพ์เล็ก (+32)
 .done:
     ret                 ; คืนค่าใน eax

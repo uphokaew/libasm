@@ -3,6 +3,6 @@
 
 int main(void)
 {
-    printf("tolower('A') = %c\n", ft_tolower('A')); // ควรได้ 'a'
+    printf("is Lower = %d\n", ft_islower('3'));
     return 0;
 }
