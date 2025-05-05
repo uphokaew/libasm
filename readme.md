@@ -105,7 +105,7 @@ libasm/
 
 ## 👨‍💻 Author
 
-**Bee** 🐝
+**uphokaew (B)** 🐝
 A student passionate about systems programming and sleeping.
 This project is part of my self-learning journey into low-level development.
 
