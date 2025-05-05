@@ -2,4 +2,4 @@
 
 # export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 
-gcc -Iinclude -L. -lasm -Wl,-rpath,. test/main.c && ./a.out
+gcc -O3 -Iinclude -L. -lasm -Wl,-rpath,. test/main.c && ./a.out

@@ -18,13 +18,12 @@ Currently implemented functions (x86_64):
 
 | Function        | Description                        |
 |-----------------|------------------------------------|
-| `ft_isalpha`     | Checks for alphabetic character    |
-| `ft_isdigit`     | Checks for digit (0–9)             |
-| `ft_isalnum`     | Checks for alphanumeric            |
-| `ft_isascii`     | Checks if character is ASCII       |
-| `ft_islower`     | Checks for lowercase letter        |
-| `ft_isupper`     | Checks for uppercase letter        |
-| `ft_tolower`     | Converts to lowercase              |
+| `ft_isalpha`    | Checks for alphabetic character    |
+| `ft_isdigit`    | Checks for digit (0–9)             |
+| `ft_isalnum`    | Checks for alphanumeric character  |
+| `ft_isascii`    | Checks if character is ASCII       |
+| `ft_islower`    | Checks for lowercase letter        |
+| `ft_isupper`    | Checks for uppercase letter        |
 
 ---
 

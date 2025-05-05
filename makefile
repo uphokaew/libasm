@@ -11,7 +11,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = include
 
-FILES = ft_tolower.asm ft_islower.asm
+FILES = ft_isupper.asm ft_islower.asm ft_isdigit.asm ft_isalpha.asm ft_isalnum.asm ft_isascii.asm
 
 SRC = $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ = $(addprefix $(OBJ_DIR)/shared/, $(FILES:%.asm=%.o))

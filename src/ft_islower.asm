@@ -9,7 +9,16 @@ section .text
     global M_FT_ISLOWER
 
 M_FT_ISLOWER:
-    mov rax, rdi        ; รับพารามิเตอร์ c จาก edi
-	xor rax, rax
-.done:
-    ret                 ; คืนค่าใน eax
+	cmp edi, 0x61	; 'a'
+	jl .false
+	cmp edi, 0x7A	; 'z'
+	jg .false
+
+	mov eax, 1
+	jmp .re
+
+.false:
+	mov eax, 0
+
+.re:
+	ret
