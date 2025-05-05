@@ -49,6 +49,6 @@ clean:
 	$(RM) $(OBJ_DIR)
 
 fclean: clean
-	$(RM) $(STATIC_NAME) $(SHARED_NAME)
+	$(RM) $(STATIC_NAME) $(SHARED_NAME) a.out
 
 re: fclean all
