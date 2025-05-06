@@ -15,6 +15,7 @@ M_FT_ISALPHA:
 	setbe al
 	jbe .L3
 
+; or condition
 .L2:
 	add edi, 0x20	; 'A' + 32 = 'a'
 	cmp edi, 0x1A
