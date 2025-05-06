@@ -15,26 +15,18 @@ section .text
 	global M_FT_ISALNUM
 
 M_FT_ISALNUM:
-	push rbp		; 8 byte
-	mov rbp, rsp
-	push rdi		; 8 byte
-
+	xor eax, eax
 	call M_FT_ISDIGIT wrt ..plt
-	cmp eax, 0x1	; 'rax == true'
-	je .true
-	
-.or:
-	mov rdi, [rbp - 8]
-	call M_FT_ISALPHA wrt ..plt
-	cmp eax, 0x1	; 'rax == false'
-	je .true
-	mov eax, 0
-	pop rdi
-	leave
-	ret
+	cmp eax, 0x1
+	sete al
+	je .L2
 
-.true:
-	mov eax, 1
-	pop rdi
-	leave
+; or condition
+.L1:
+	call M_FT_ISALPHA wrt ..plt
+	cmp eax, 0x1
+	sete al
+
+; return
+.L2:
 	ret

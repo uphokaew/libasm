@@ -9,23 +9,17 @@ section .text
 	global M_FT_ISALPHA
 
 M_FT_ISALPHA:
-	cmp edi, 0x41	; 'A'
-	jl .or						; SF ≠ OF
-	cmp edi, 0x5A	; 'Z'
-	jle .true					; ZF=1 or SF ≠ OF
+	sub	edi, 0x41
+	xor eax, eax
+	cmp edi, 0x1A
+	setbe al
+	jbe .L3
 
-.or:
-	cmp edi, 0x61	; 'a'
-	jl .false					; SF ≠ OF
-	cmp edi, 0x7A	; 'z'
-	jg .false					; SF ≠ OF
+.L2:
+	add edi, 0x20	; 'A' + 32 = 'a'
+	cmp edi, 0x1A
+	setbe al
 
-.true:
-	mov eax, 1
-	jmp .re
-
-.false:
-	mov eax, 0
-
-.re:
+; return
+.L3:
 	ret

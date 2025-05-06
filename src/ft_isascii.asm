@@ -9,16 +9,8 @@ section .text
 	global M_FT_ISASCII
 
 M_FT_ISASCII:
-	cmp edi, 0x0	; NULL
-	jl .false
-	cmp edi, 0x7F	; DEL
-	jg .false
-
-	mov eax, 1
-	jmp .re
-
-.false:
-	mov eax, 0	
-
-.re:
+	sub edi, 0x0	; edi - 0 (null) length 0 - 127 convert to a number
+	xor eax, eax
+	cmp edi, 0x7F	; DEL =	127 check (edi <= 127)
+	setbe al
 	ret

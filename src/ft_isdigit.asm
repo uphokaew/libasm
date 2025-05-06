@@ -9,16 +9,8 @@ section .text
 	global M_FT_ISDIGIT
 
 M_FT_ISDIGIT:
-	cmp edi, 0x30	; '0'
-	jl .false
-	cmp edi, 0x39	; '9'
-	jg .false
-
-	mov eax, 1
-	jmp .re
-
-.false:
-	mov eax, 0
-
-.re:
+	sub edi, 0x30	; edi - '0' = number digit
+	xor eax, eax
+	cmp edi, 0x39	; edi - 9
+	setbe al
 	ret

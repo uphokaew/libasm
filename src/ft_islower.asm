@@ -9,16 +9,8 @@ section .text
     global M_FT_ISLOWER
 
 M_FT_ISLOWER:
-	cmp edi, 0x61	; 'a'
-	jl .false
-	cmp edi, 0x7A	; 'z'
-	jg .false
-
-	mov eax, 1
-	jmp .re
-
-.false:
-	mov eax, 0
-
-.re:
+	sub	edi, 0x61	; edi - 'a'
+	xor eax, eax
+	cmp edi, 0x1A	; edi - 26 check (edi <= 26)
+	setbe al
 	ret
