@@ -4,10 +4,20 @@
 int main(void)
 {
 
-	printf("NULL: %ld\n", ft_strlen("")); // ควรได้ 0
-	printf("ABC: %ld\n", ft_strlen("ABC")); // ควรได้ 3
-	printf("ABC: %ld\n", ft_strlen("A B C")); // ควรได้ 5
-	printf("ABC: %ld\n", ft_strlen(" A\0BC")); // ควรได้ 2
+	printf("ABD ncmp ABC n = 3: %d\n", ft_strncmp("ABD", "ABC", 3)); // ควรได้ 1
+	printf("ABC ncmp ABD n = 3: %d\n", ft_strncmp("ABC", "ABD", 3)); // ควรได้ -1
+	printf("ABC ncmp ACC n = 3: %d\n", ft_strncmp("ABC", "ABD", 3)); // ควรได้ -1
+	printf("ACC ncmp ABC n = 3: %d\n", ft_strncmp("ABC", "ABD", 3)); // ควรได้ 1
+
+	printf("ABC ncmp NULL n = 3: %d\n", ft_strncmp("ABC", "", 3)); // ควรได้ 65
+	printf("NULL ncmp ABC n = 3: %d\n", ft_strncmp("", "ABD", 3)); // ควรได้ -65
+
+	printf("ABC ncmp ABD n = 0: %d\n", ft_strncmp("ABC", "ABD", 0)); // ควรได้ 0
+
+	// printf("NULL: %ld\n", ft_strlen("")); // ควรได้ 0
+	// printf("ABC: %ld\n", ft_strlen("ABC")); // ควรได้ 3
+	// printf("ABC: %ld\n", ft_strlen("A B C")); // ควรได้ 5
+	// printf("ABC: %ld\n", ft_strlen(" A\0BC")); // ควรได้ 2
 
 	// printf("ft_isupper('A'): %d\n", ft_isupper('A')); // ควรได้ 1
     // printf("ft_isupper('z'): %d\n", ft_isupper('z')); // ควรได้ 0
