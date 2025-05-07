@@ -13,9 +13,9 @@ M_FT_STRLEN:
 .L0:
 	mov bl, [rdi]	; load charecter of pointer
 	test bl, bl		; check and set flag Zero bl = NULL
-	jz .L2
+	jz .L1
 	inc rax			; incement rax
 	inc rdi			; incement offset rdi next char of pointer
 	jmp .L0
-.L2:
+.L1:
 	ret
