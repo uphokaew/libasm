@@ -24,6 +24,7 @@ Currently implemented functions (x86_64):
 | `ft_isascii`    | Checks if character is ASCII       |
 | `ft_islower`    | Checks for lowercase letter        |
 | `ft_isupper`    | Checks for uppercase letter        |
+| `ft_strlen`     | Checks for string length           |
 
 ---
 

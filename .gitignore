@@ -2,3 +2,6 @@ obj
 a.out
 *.so
 *.a
+/*.c
+/*.asm
+/*.o
