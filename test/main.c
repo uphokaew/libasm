@@ -1,18 +1,26 @@
 #include "../include/libasm.h"
 #include <stdio.h>
 
+void	test_ft_striteri(unsigned int n, char *str) {
+	printf("param 1: %u \tparam 2: %s\n", n, str);
+}
+
 int main(void)
 {
+	ft_striteri("ABC", test_ft_striteri);
+	ft_striteri("ABCCC", test_ft_striteri);
+	ft_striteri("", test_ft_striteri);
+	ft_striteri("AB\0C", test_ft_striteri);
 
-	printf("ABD ncmp ABC n = 3: %d\n", ft_strncmp("ABD", "ABC", 3)); // ควรได้ 1
-	printf("ABC ncmp ABD n = 3: %d\n", ft_strncmp("ABC", "ABD", 3)); // ควรได้ -1
-	printf("ABC ncmp ACC n = 3: %d\n", ft_strncmp("ABC", "ABD", 3)); // ควรได้ -1
-	printf("ACC ncmp ABC n = 3: %d\n", ft_strncmp("ABC", "ABD", 3)); // ควรได้ 1
+	// printf("ABD ncmp ABC n = 3: %d\n", ft_strncmp("ABD", "ABC", 3)); // ควรได้ 1
+	// printf("ABC ncmp ABD n = 3: %d\n", ft_strncmp("ABC", "ABD", 3)); // ควรได้ -1
+	// printf("ABC ncmp ACC n = 3: %d\n", ft_strncmp("ABC", "ABD", 3)); // ควรได้ -1
+	// printf("ACC ncmp ABC n = 3: %d\n", ft_strncmp("ABC", "ABD", 3)); // ควรได้ 1
 
-	printf("ABC ncmp NULL n = 3: %d\n", ft_strncmp("ABC", "", 3)); // ควรได้ 65
-	printf("NULL ncmp ABC n= 3: %d\n", ft_strncmp("", "ABD", 3)); // ควรได้ -65
+	// printf("ABC ncmp NULL n = 3: %d\n", ft_strncmp("ABC", "", 3)); // ควรได้ 65
+	// printf("NULL ncmp ABC n= 3: %d\n", ft_strncmp("", "ABD", 3)); // ควรได้ -65
 
-	printf("ABC ncmp ABD n = 0: %d\n", ft_strncmp("ABC", "ABD", 0)); // ควรได้ 0
+	// printf("ABC ncmp ABD n = 0: %d\n", ft_strncmp("ABC", "ABD", 0)); // ควรได้ 0
 
 	// printf("NULL: %ld\n", ft_strlen("")); // ควรได้ 0
 	// printf("ABC: %ld\n", ft_strlen("ABC")); // ควรได้ 3

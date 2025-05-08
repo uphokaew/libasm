@@ -25,9 +25,13 @@ Currently implemented functions (x86_64):
 | `ft_islower`    | Checks for lowercase letter        |
 | `ft_isupper`    | Checks for uppercase letter        |
 | `ft_strlen`     | Checks for string length           |
-|                 | The strncmp() function is similar, |
-| `ft_strncmp`    | except it compares only the first  |
+| `ft_strncmp`    | The strncmp() function is similar, |
+|                 | except it compares only the first  |
 |                 | (at most) n bytes of s1 and s2.    |
+| `ft_striteri`   | Applies the function ’f’           |
+|                 | on each character of the string    |
+|                 | passed as argument passing its     |
+|                 | index as first argument.           |
 ---
 
 ## ⚙️ Tools Used

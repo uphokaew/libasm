@@ -49,7 +49,6 @@ M_FT_STRNCMP:
 ; 	call printf
 
 ; 	leave
-; 	pop rbp
 
 ; .exit:
 ; 	mov rax, 60
